@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 });
 
 // Otros endpoints o configuraciones de tu servidor
-
-app.listen(4200, function() {
-  console.log('Aplicación Angular desplegada en el puerto 4200');
+const port = process.env.PORT || 4200;
+app.listen(port, function() {
+  console.log(`Aplicación Node.js desplegada en el puerto ${port}`);
 });
