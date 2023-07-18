@@ -1,12 +1,14 @@
-const http = require('http');
-const PORT = 3000;
+const express = require('express');
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!');
+app.use(express.static(__dirname + '/dist/stock-web'));
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/dist/stock-web/index.html');
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+// Otros endpoints o configuraciones de tu servidor
+
+app.listen(4200, function() {
+  console.log('Aplicación Angular desplegada en el puerto 4200');
 });
