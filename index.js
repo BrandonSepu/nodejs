@@ -8,8 +8,8 @@ app.get('/', function(req, res) {
 });
 
 // Otros endpoints o configuraciones de tu servidor
-const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 3000;
+const host = process.env.HOST;
+const port = process.env.PORT;
 app.listen(port, host, function() {
   console.log(`Aplicación Node.js desplegada en ${host}:${port}`);
 });
